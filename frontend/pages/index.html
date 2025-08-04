@@ -1,27 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clean Booking | Home</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
     <!-- Header -->
     <header class="site-header">
         <div class="container nav">
-            <!-- <h1 class="logo">Clean</h1> -->
-            <a href="#" class="logo">
-                <img src="../images/logo.png" alt="Clean Logo"/>
-            </a>
-            <nav class="nav-links">
+            <div class="header-left">
+                <a href="#" class="logo">
+                <img src="../images/logo.png" alt="Clean Logo" />
+                </a>
+            </div>
+            <div class="header-center">
+                <nav class="nav-links">
                 <a href="#">Residential</a>
                 <a href="#">Office</a>
                 <a href="#">Commercial</a>
                 <a href="#">FAQ’s</a>
+                </nav>
+            </div>
+            <div class="header-right">
                 <button class="btn login-btn">Login</button>
-            </nav>
         </div>
+</div>
+
     </header>
 
     <!-- Hero Section -->
@@ -38,21 +46,44 @@
 
         <div class="container hero-flex">
             <div class="hero-text">
-                <h2>Your One Stop Cleaning For All Needs</h2>
+                <h2>
+                    Your One Stop Cleaning <br />
+                    <span class="hero-highlight">Centre For All Needs</span>
+                </h2>
             </div>
-            <form class="booking-form">
-                <select><option>Two</option></select>
-                <select><option>Bathroom</option></select>
-                <select><option>Standard</option></select>
-                <button class="btn primary-btn">Booking from $80</button>
-            </form>
+           
+            <div class="booking-form-wrapper">
+                <form class="booking-form">
+                    <select name="bedrooms">
+                        <option selected disabled>Bedrooms</option>
+                        <option>One</option>
+                        <option>Two</option>
+                        <option>Three</option>
+                    </select>
+                    <select name="bathrooms">
+                        <option selected disabled>Bathrooms</option>
+                        <option>One</option>
+                        <option>Two</option>
+                        <option>Three</option>
+                    </select>
+                    <select name="cleaning">
+                        <option selected disabled>Cleaning Type</option>
+                        <option>Standard</option>
+                        <option>Deep clean</option>
+                        <option>Move-in/out</option>
+                    </select>
+                    <button class="btn primary-btn">Booking from $80</button>
+                </form>
+            </div>
+
         </div>
     </section>
 
     <!-- Why Choose Shield -->
     <section class="why-shield container">
         <h3>Why Choose Shield ?</h3>
-        <p class="subtext">We understand your home is important to you. That’s why we focus on the quality of the clean...</p>
+        <p class="subtext">We understand your home is important to you. That’s why we focus on the quality of the
+            clean...</p>
         <div class="features">
             <div class="feature-card">
                 <h4>BOOK</h4>
@@ -99,9 +130,15 @@
     <!-- Booking Strip -->
     <section class="booking-strip">
         <form class="booking-form container">
-            <select><option>Bedroom</option></select>
-            <select><option>Bathroom</option></select>
-            <select><option>Standard</option></select>
+            <select>
+                <option>Bedroom</option>
+            </select>
+            <select>
+                <option>Bathroom</option>
+            </select>
+            <select>
+                <option>Standard</option>
+            </select>
             <button class="btn primary-btn">Booking from $80</button>
         </form>
     </section>
@@ -141,5 +178,7 @@
             </div>
         </div>
     </footer>
+    <script src="../js/app.js"></script>
 </body>
+
 </html>

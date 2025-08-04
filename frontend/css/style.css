@@ -4,13 +4,15 @@
     font-weight: 400;
     font-style: normal;
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
     font-family: 'Averta';
     background: #fff;
     color: #1a1a1a;
@@ -23,16 +25,36 @@ body, html {
 }
 
 .site-header {
-    background: #ffffff;
-    border-bottom: 1px solid #eee;
-    padding: 20px 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+  transition: all 0.3s ease;
+  background: transparent;
 }
 
 .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+
+.header-left {
+  flex: 1;
+}
+
+.header-center {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.header-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
 
 .logo img {
     height: 38px;
@@ -56,8 +78,6 @@ body, html {
     letter-spacing: 0.003em;
 }
 
-
-
 .login-btn {
     background: #ffffff;
     border: 2px solid #1A78F2;
@@ -70,10 +90,16 @@ body, html {
     cursor: pointer;
 }
 
+.scrolled-header {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+
 .hero {
     position: relative;
     height: 700px;
-    background: #f8f9fc;
     overflow: hidden;
 }
 
@@ -86,49 +112,42 @@ body, html {
 
 .img-woman {
     bottom: 0;
-    left: 5%;
-    width: 180px;
+    left: 10%;
 }
 
 .img-rope {
-    top: 10%;
-    left: 40%;
-    width: 140px;
+    left: 45%;
 }
 
 .img-vacuum {
     bottom: 0;
-    right: 5%;
-    width: 200px;
+    right: 12%;
 }
 
 .img-dot-left {
     bottom: 120px;
     left: 35%;
-    width: 100px;
 }
 
 .img-dot-right {
     bottom: 80px;
     right: 30%;
-    width: 110px;
 }
 
 .img-floor-left {
     bottom: 0;
-    left: 0;
-    width: 300px;
+    left: 3;
 }
 
 .img-floor-right {
     bottom: 0;
     right: 0;
-    width: 400px;
 }
 
 .hero-flex {
     position: absolute;
-    top: 50%;
+    top: 55%;
+    gap: 30px;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -138,39 +157,99 @@ body, html {
     z-index: 2;
 }
 
-.hero-flex {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    flex-wrap: wrap;
+.hero-text h2 {
+    font-family: 'Averta';
+    font-size: 58px;
+    font-weight: 700;
+    line-height: 65px;
+    letter-spacing: -0.012em;
+    text-align: center;
+    color: #12153A;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
-.hero h2 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin-bottom: 20px;
+.hero-highlight {
+    color: inherit;
+    font-weight: inherit;
 }
+
+
+.booking-form-wrapper {
+    background: #fff;
+    box-shadow: 0px 18px 28px rgba(72, 101, 128, 0.18);
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 30px;
+    padding: 10px 20px;
+    /* small internal spacing, no top/bottom padding if you prefer */
+}
+
 
 .booking-form {
     display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 20px;
 }
 
-.booking-form select,
-.booking-form button {
-    padding: 12px 16px;
-    font-size: 1rem;
-    border-radius: 6px;
+.booking-form select {
+    background: #FFFFFF;
+    color: #4F6071;
+    font-family: 'Averta';
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 29px;
+    border: 1.5px solid #E0E6ED;
+    border-radius: 10px;
+    padding: 12px 20px;
+    height: 50px;
+    min-width: 160px;
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%234F6071' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 18px 18px;
+    transition: border 0.2s ease;
+}
+
+
+.booking-form select:focus {
+    outline: none;
+    border: 2px solid #1A78F2;
+    box-shadow: 0 0 0 3px rgba(26, 120, 242, 0.2);
+    background-color: #F4F7F9;
+    color: #1A78F2;
+}
+
+
+.booking-form option {
+    font-size: 16px;
+    font-weight: 600;
+    color: #4F6071;
 }
 
 .primary-btn {
-    background: #007bff;
+    background: #1A78F2;
     color: white;
     border: none;
+    border-radius: 10px;
+    height: 50px;
+    padding: 0 24px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.003em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.primary-btn:hover {
+    background: #0059c9;
 }
 
 .why-shield {
@@ -244,6 +323,7 @@ body, html {
 
 
 @media (max-width: 768px) {
+
     .img-dot-left,
     .img-dot-right,
     .img-floor-left,
@@ -267,4 +347,10 @@ body, html {
         transform: translate(-50%, 0%);
         flex-direction: column;
     }
+
+    .hero-text h2 {
+        font-size: 36px;
+        line-height: 42px;
+    }
+
 }
