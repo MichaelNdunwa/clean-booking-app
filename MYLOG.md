@@ -156,3 +156,18 @@ Visit: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 ---
 
 ✅ Your Django + PostgreSQL project is now running successfully.
+
+---
+
+### 🟢 13. Run the Frontend
+
+```bash
+cd frontend
+python -m http.server 8000
+```
+
+Visit: [http://0.0.0.0:8000/](http://0.0.0.0:8000/)
+
+---
+
+✅ Your Django + PostgreSQL project is now running successfully.
