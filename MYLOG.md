@@ -163,10 +163,9 @@ Visit: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
 ```bash
 cd frontend
-python -m http.server 8000
+python3 -m http.server 8000
 ```
-
-Visit: [http://0.0.0.0:8000/](http://0.0.0.0:8000/)
+Visit: [http://localhost:8000/](http://localhost:8000/)
 
 ---
 
