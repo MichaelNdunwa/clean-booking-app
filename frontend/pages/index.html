@@ -61,12 +61,15 @@
         </div>
 
         <div class="container hero-flex">
-            <div class="hero-text">
+            <div class="hero-text scrolling-heading">
                 <h2>
                     Your One Stop Cleaning <br />
                     <span class="hero-highlight">Centre For All Needs</span>
                 </h2>
             </div>
+
+            <!-- Show this on mobile only -->
+             <a href="/booking.html" class="mobile-cta-button">Booking from $80</a>
            
             <div class="booking-form-wrapper">
                 <form class="booking-form">
@@ -99,21 +102,23 @@
 
         <div class="features">
             <div class="feature-card feature-card-1">
-                <div class="icon-wrapper">
+                <div class="icon-wrapper icon-wrapper-1">
                     <img src="../images/icons/book-icon.svg" alt="Book">
                 </div>
                 <h4>BOOK</h4>
                 <p>Tell us when and where you want your cleaning.</p>
             </div>
+            <img src="../images/icons/curved-line.svg" alt="curve" class="feature-curve" />
             <div class="feature-card feature-card-2">
-                <div class="icon-wrapper">
+                <div class="icon-wrapper icon-wrapper-2">
                     <img src="../images/icons/clean-icon.svg" alt="Clean">
                 </div>
                 <h4>CLEAN</h4>
                 <p>A Professional cleaner comes over and cleans your place.</p>
             </div>
+            <img src="../images/icons/curved-line.svg" alt="curve" class="feature-curve-2" />
             <div class="feature-card feature-card-3">
-                <div class="icon-wrapper">
+                <div class="icon-wrapper icon-wrapper-3">
                     <img src="../images/icons/freedom-icon.svg" alt="Freedom">
                 </div>
                 <h4>FREEDOM</h4>
@@ -129,30 +134,56 @@
             <h3>The Shield Report</h3>
             <div class="blog-cards">
                 <div class="blog-card">
-                    <img src="../images/blog1.jpg" alt="Blog 1">
-                    <h4>How to Efficiently Clean & Organize Living Areas:</h4>
-                    <p>November is here... clutter and dust...</p>
-                    <span>Laura Pelita · December 18, 2023</span>
+                    <img src="../images/blog1.jpg" alt="Blog 1" class="blog-card-img">
+                    <div class="blog-card-content">
+                        <h4 class="blog-card-title">How to Efficiently Clean & Organize Living Areas:</h4>
+                        <p class="blog-card-description">November is here, and with it comes a fresh opportunity to tackle the clutter and dust that may have acc...</p>
+                        <div class="blog-card-author">
+                            <img src="../images/author-profile-1.jpg" alt="Author" class="author-img">
+                            <div class="author-details">
+                                <span class="author-name">Laura Pelita</span>
+                                <span class="blog-publish-date">December 18, 2023</span>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+
+                <div class="blog-card">
+                    <img src="../images/blog2.jpg" alt="Blog 2" class="blog-card-img">
+                    <div class="blog-card-content">
+                        <h4 class="blog-card-title">How to Create a Self-Cleaning Home.</h4>
+                        <p class="blog-card-description">Creating a home that practically cleans itself may sound like a dream, but with a little know-how and some...</p>
+                        <div class="blog-card-author">
+                            <img src="../images/author-profile-2.jpg" alt="Author 2" class="author-img">
+                            <div class="author-details">
+                                <span class="author-name">Sebrina Ludowski</span>
+                                <span class="blog-publish-date">December 24, 2023</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="blog-card">
-                    <img src="../images/blog2.jpg" alt="Blog 2">
-                    <h4>How to Create a Self-Cleaning Home.</h4>
-                    <p>Creating a home that practically cleans itself...</p>
-                    <span>Sebrina Ludowski · December 24, 2023</span>
+                    <img src="../images/blog3.jpg" alt="Blog 3" class="blog-card-img">
+                    <div class="blog-card-content">
+                        <h4 class="blog-card-title">10 Easy Ways to Turn Housekeeping, Happy!</h4>
+                        <p class="blog-card-description">Homekeeping can sometimes feel like a never-ending to-do list that zaps the joy right out of your day. But wh...</p>
+                        <div class="blog-card-author">
+                            <img src="../images/author-profile-3.jpg" alt="Author 3" class="author-img">
+                            <div class="author-details">
+                                <span class="author-name">Katrina Gomez</span>
+                                <span class="blog-publish-date">January 2, 2024</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="blog-card">
-                    <img src="../images/blog3.jpg" alt="Blog 3">
-                    <h4>10 Easy Ways to Turn Housekeeping, Happy!</h4>
-                    <p>Housekeeping can sometimes feel like...</p>
-                    <span>Katrina Gomez · January 2, 2024</span>
-                </div>
+                
             </div>
         </div>
     </section>
 
     <!-- Booking Strip -->
     <section class="booking-strip">
-        <form class="booking-form container">
+        <!-- <form class="booking-form container">
             <select>
                 <option>Bedroom</option>
             </select>
@@ -163,41 +194,81 @@
                 <option>Standard</option>
             </select>
             <button class="btn primary-btn">Booking from $80</button>
-        </form>
+        </form> -->
+        <div class="booking-form-wrapper">
+                <form class="booking-form">
+                    <select id="select-bedrooms" name="bedrooms">
+                        <option selected disabled>Bedrooms</option>
+                    </select>
+                    <select id="select-bathrooms" name="bathrooms">
+                        <option selected disabled>Bathrooms</option>
+                    </select>
+                    <select id="select-cleaning" name="cleaning">
+                        <option selected disabled>Cleaning Type</option>
+                    </select>
+                    <button class="btn primary-btn">Booking from $80</button>
+                </form>
+            </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-content">
-            <div class="footer-logo">Clean</div>
-            <div class="footer-columns">
-                <div>
-                    <h5>Company</h5>
-                    <ul>
-                        <li>About Us</li>
-                        <li>Career</li>
-                        <li>Press</li>
-                        <li>Blog</li>
-                    </ul>
+    <footer class="footer-section">
+
+        <div class="footer-content container">
+            <div class="footer-top">
+                <div class="footer-social">
+                    <a href="#" class="social-link">
+                        <img src="../images/icons/facebook-icon.svg" alt="facebook-icon" class="social-icon">
+                    </a>
+                    <a href="#" class="social-link">
+                        <img src="../images/icons/twitter-icon.svg" alt="twitter-icon" class="social-icon">
+                    </a>                <a href="#" class="social-link">
+                        <img src="../images/icons/instagram-icon.svg" alt="instagram-icon" class="social-icon">
+                    </a>                <a href="#" class="social-link">
+                        <img src="../images/icons/linkedln-icon.svg" alt="linkedln-icon" class="social-icon">
+                    </a>
                 </div>
-                <div>
-                    <h5>Services</h5>
-                    <ul>
-                        <li>Residential</li>
-                        <li>Office Cleaning</li>
-                        <li>Commercial Cleaning</li>
-                    </ul>
-                </div>
-                <div>
-                    <h5>Support</h5>
-                    <ul>
-                        <li>Contact Us</li>
-                        <li>FAQ’s</li>
-                    </ul>
+
+                <div class="footer-links">
+                    <nav class="footer-col" aria-label="Company">
+                        <h4>COMPANY</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Career</a></li>
+                            <li><a href="#">Press</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="footer-col" aria-label="Services">
+                        <h4>SERVICES</h4>
+                        <ul>
+                            <li><a href="#">Residential</a></li>
+                            <li><a href="#">Office Cleaning</a></li>
+                            <li><a href="#">Commercial Cleaning</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="footer-col" aria-label="Support">
+                        <h4>SUPPORT</h4>
+                        <ul>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">FAQ’s</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
-            <div class="footer-social">
-                <span>© Clean Co. All rights reserved.</span>
+           <div class="footer-bottom">
+                <div class="brand-and-copy">
+                    <a href="#" class="footer-logo">
+                        <img src="../images/logo-footer.png" alt="Clean Logo" />
+                    </a>
+                </div>
+                <div class="legal-links">
+                    <a href="#">© Clean Co. All rights reserved</a>
+                    <span aria-hidden="true">.</span>
+                    <a href="#">Terms of Service</a>
+                    <span aria-hidden="true">.</span>
+                    <a href="#">Privacy Policy</a>
+                </div>
             </div>
         </div>
     </footer>
