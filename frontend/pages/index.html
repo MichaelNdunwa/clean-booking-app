@@ -14,17 +14,17 @@
         <div class="container nav">
             <div class="header-left">
                 <a href="#" class="logo">
-                <img src="../images/logo.png" alt="Clean Logo" />
+                    <img src="../images/logo.png" alt="Clean Logo" />
                 </a>
             </div>
 
             <!-- Hamburger Menu Button -->
-            <div class="mobile-menu-toggle">
+            <div class="mobile-menu-toggle hidden">
                 <img src="../images/icons/hamburger.svg" alt="menu" id="hamburger-btn">
             </div>
 
             <!-- Desktop Nav -->
-            <div class="header-center desktop-nav">
+            <div class="header-center desktop-nav hidden">
                 <nav class="nav-links">
                     <a href="#">Residential</a>
                     <a href="#">Office</a>
@@ -69,20 +69,19 @@
             </div>
 
             <!-- Show this on mobile only -->
-             <a href="/booking.html" class="mobile-cta-button">Booking from $80</a>
-           
+            <a href="/booking.html" class="mobile-cta-button">Booking from $80</a>
+
+            <!-- Booking form -->
             <div class="booking-form-wrapper">
-                <form class="booking-form">
-                    <select id="select-bedrooms" name="bedrooms">
-                        <option selected disabled>Bedrooms</option>
-                    </select>
-                    <select id="select-bathrooms" name="bathrooms">
-                        <option selected disabled>Bathrooms</option>
-                    </select>
-                    <select id="select-cleaning" name="cleaning">
-                        <option selected disabled>Cleaning Type</option>
-                    </select>
-                    <button class="btn primary-btn">Booking from $80</button>
+                <form class="booking-form" id="booking-form" action="#">
+                    <!-- Custom selects are created inside these shells -->
+                    <div class="cs field" data-name="bedrooms" data-placeholder="Bedroom"></div>
+                    <div class="cs-divider" aria-hidden="true"></div>
+                    <div class="cs field" data-name="bathrooms" data-placeholder="Bathroom"></div>
+                    <div class="cs-divider" aria-hidden="true"></div>
+                    <div class="cs field" data-name="cleaning" data-placeholder="Cleaning Type"></div>
+
+                    <button class="btn primary-btn" type="button">Booking from $80</button>
                 </form>
             </div>
 
@@ -93,10 +92,11 @@
     <section class="why-shield container">
         <div class="why-top">
             <div class="why-left">
-            <h3>Why Choose <br> Shield ?</h3>
+                <h3>Why Choose <br> Shield ?</h3>
             </div>
             <div class="why-right">
-            <p>We understand your home is important to you. That’s why we focus on the quality of the clean. Our cleaners aren’t contract workers – they are full-time employees. They care as much as we do.</p>
+                <p>We understand your home is important to you. That’s why we focus on the quality of the clean. Our
+                    cleaners aren’t contract workers – they are full-time employees. They care as much as we do.</p>
             </div>
         </div>
 
@@ -137,7 +137,8 @@
                     <img src="../images/blog1.jpg" alt="Blog 1" class="blog-card-img">
                     <div class="blog-card-content">
                         <h4 class="blog-card-title">How to Efficiently Clean & Organize Living Areas:</h4>
-                        <p class="blog-card-description">November is here, and with it comes a fresh opportunity to tackle the clutter and dust that may have acc...</p>
+                        <p class="blog-card-description">November is here, and with it comes a fresh opportunity to
+                            tackle the clutter and dust that may have acc...</p>
                         <div class="blog-card-author">
                             <img src="../images/author-profile-1.jpg" alt="Author" class="author-img">
                             <div class="author-details">
@@ -145,14 +146,15 @@
                                 <span class="blog-publish-date">December 18, 2023</span>
                             </div>
                         </div>
-                     </div>
+                    </div>
                 </div>
 
                 <div class="blog-card">
                     <img src="../images/blog2.jpg" alt="Blog 2" class="blog-card-img">
                     <div class="blog-card-content">
                         <h4 class="blog-card-title">How to Create a Self-Cleaning Home.</h4>
-                        <p class="blog-card-description">Creating a home that practically cleans itself may sound like a dream, but with a little know-how and some...</p>
+                        <p class="blog-card-description">Creating a home that practically cleans itself may sound like a
+                            dream, but with a little know-how and some...</p>
                         <div class="blog-card-author">
                             <img src="../images/author-profile-2.jpg" alt="Author 2" class="author-img">
                             <div class="author-details">
@@ -166,7 +168,8 @@
                     <img src="../images/blog3.jpg" alt="Blog 3" class="blog-card-img">
                     <div class="blog-card-content">
                         <h4 class="blog-card-title">10 Easy Ways to Turn Housekeeping, Happy!</h4>
-                        <p class="blog-card-description">Homekeeping can sometimes feel like a never-ending to-do list that zaps the joy right out of your day. But wh...</p>
+                        <p class="blog-card-description">Homekeeping can sometimes feel like a never-ending to-do list
+                            that zaps the joy right out of your day. But wh...</p>
                         <div class="blog-card-author">
                             <img src="../images/author-profile-3.jpg" alt="Author 3" class="author-img">
                             <div class="author-details">
@@ -176,39 +179,26 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </section>
 
     <!-- Booking Strip -->
-    <section class="booking-strip">
-        <!-- <form class="booking-form container">
-            <select>
-                <option>Bedroom</option>
-            </select>
-            <select>
-                <option>Bathroom</option>
-            </select>
-            <select>
-                <option>Standard</option>
-            </select>
-            <button class="btn primary-btn">Booking from $80</button>
-        </form> -->
+    <section class="booking-strip hidden">
+        <!-- Booking form -->
         <div class="booking-form-wrapper">
-                <form class="booking-form">
-                    <select id="select-bedrooms" name="bedrooms">
-                        <option selected disabled>Bedrooms</option>
-                    </select>
-                    <select id="select-bathrooms" name="bathrooms">
-                        <option selected disabled>Bathrooms</option>
-                    </select>
-                    <select id="select-cleaning" name="cleaning">
-                        <option selected disabled>Cleaning Type</option>
-                    </select>
-                    <button class="btn primary-btn">Booking from $80</button>
-                </form>
-            </div>
+            <form class="booking-form" id="booking-form" action="#">
+                <!-- Custom selects are created inside these shells -->
+                <div class="cs field" data-name="bedrooms" data-placeholder="Bedroom"></div>
+                <div class="cs-divider" aria-hidden="true"></div>
+                <div class="cs field" data-name="bathrooms" data-placeholder="Bathroom"></div>
+                <div class="cs-divider" aria-hidden="true"></div>
+                <div class="cs field" data-name="cleaning" data-placeholder="Cleaning Type"></div>
+
+                <button class="btn primary-btn" type="button">Booking from $80</button>
+            </form>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -222,10 +212,10 @@
                     </a>
                     <a href="#" class="social-link">
                         <img src="../images/icons/twitter-icon.svg" alt="twitter-icon" class="social-icon">
-                    </a>                <a href="#" class="social-link">
+                    </a> <a href="#" class="social-link">
                         <img src="../images/icons/instagram-icon.svg" alt="instagram-icon" class="social-icon">
-                    </a>                <a href="#" class="social-link">
-                        <img src="../images/icons/linkedln-icon.svg" alt="linkedln-icon" class="social-icon">
+                    </a> <a href="#" class="social-link">
+                        <img src="../images/icons/linkedin-icon.svg" alt="linkedin-icon" class="social-icon">
                     </a>
                 </div>
 
@@ -256,14 +246,14 @@
                     </nav>
                 </div>
             </div>
-           <div class="footer-bottom">
+            <div class="footer-bottom">
                 <div class="brand-and-copy">
                     <a href="#" class="footer-logo">
                         <img src="../images/logo-footer.png" alt="Clean Logo" />
                     </a>
                 </div>
                 <div class="legal-links">
-                    <a href="#">© Clean Co. All rights reserved</a>
+                    <span>© 2025 Clean Co. All rights reserved</span>
                     <span aria-hidden="true">.</span>
                     <a href="#">Terms of Service</a>
                     <span aria-hidden="true">.</span>

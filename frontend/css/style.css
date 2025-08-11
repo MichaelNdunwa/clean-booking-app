@@ -24,6 +24,10 @@ html {
     padding: 20px;
 }
 
+.hidden {
+    display: none;
+}
+
 .site-header {
     position: sticky;
     top: 0;
@@ -131,7 +135,7 @@ html {
 .hero {
     position: relative;
     height: 700px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .hero-background img {
@@ -183,7 +187,7 @@ html {
 
 .hero-flex {
     position: absolute;
-    top: 55%;
+    top: 62%;
     gap: 30px;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -222,83 +226,156 @@ html {
     display: none;
 }
 
+
+/* --- Wrapper & row --- */
 .booking-form-wrapper {
     background: #fff;
-    box-shadow: 0px 18px 28px rgba(72, 101, 128, 0.18);
-    border-radius: 10px;
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    margin-top: 30px;
-    padding: 10px 20px;
+    border-radius: 16px;
+    display: inline-block;
+    box-shadow:
+        0 10px 24px rgba(72, 101, 128, .14),
+        0 40px 80px rgba(72, 101, 128, .20);
 }
-
 
 .booking-form {
     display: flex;
-    gap: 12px;
     align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
 }
 
-.booking-form select {
-    background: #FFFFFF;
-    color: #4F6071;
-    font-family: 'Averta';
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 29px;
-    border: 1.5px solid #E0E6ED;
-    border-radius: 10px;
-    padding: 12px 20px;
-    height: 50px;
-    min-width: 160px;
-    appearance: none;
-    background-image: url("../images/icons/down_arrow.svg");
-    background-repeat: no-repeat;
-    background-position: calc(100% - 16px) center;
-    background-size: 16px 16px;
-    transition: border 0.2s ease;
-    box-shadow: 0 2px 8px rgba(72, 101, 128, 0.08);
+/* --- Vertical dividers between fields --- */
+.cs-divider {
+    width: 1px;
+    height: 60px;
+    background: #E6EBF1;
 }
 
-
-.booking-form select:focus {
-    outline: none;
-    border: 2px solid #1A78F2;
-    box-shadow: 0 0 0 3px rgba(26, 120, 242, 0.2);
-    background-color: #F4F7F9;
-    color: #1A78F2;
-    background-image: url('../images/icons/up_arrow.svg');
+/* --- Custom select (closed state) --- */
+.cs {
+    position: relative;
 }
 
-
-.booking-form option {
-    font-size: 16px;
-    font-weight: 600;
-    color: #4F6071;
-}
-
-.primary-btn {
-    background: #1A78F2;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    height: 50px;
-    padding: 0 24px;
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: 0.003em;
-    cursor: pointer;
-    transition: background 0.3s ease;
+.cs-trigger {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    height: 64px;
+    min-width: 240px;
+    min-width: 220px;
+    padding: 0 22px 0 26px;
+    border: 0px solid #E0E6ED;
+    border-radius: 14px;
+    background: #FFF;
+    cursor: pointer;
+    user-select: none;
+}
+
+.cs-label {
+    font-family: 'Averta', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 2;
+    color: #12153A;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cs-placeholder {
+    color: #A8B0B9;
+}
+
+.cs-caret {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 16px;
+    background: url("../images/icons/down_arrow.svg") no-repeat center / 16px 16px;
+    transition: transform .15s ease;
+}
+
+.cs.open .cs-caret {
+    transform: rotate(180deg);
+    background-image: url("../images/icons/up_arrow.svg");
+}
+
+/* --- Focus ring (keyboard + click) --- */
+.cs-trigger:focus {
+    outline: 0;
+    border: 2px solid #1A78F2;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(26, 120, 242, .15);
+}
+
+/* --- Popup listbox --- */
+.cs-list {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 10px);
+    /* width: max(100%, 260px); */
+    width: max(95%, 210px);
+    border: 1px solid #E0E6ED;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow:
+        0 18px 40px rgba(72, 101, 128, .25),
+        0 70px 160px rgba(72, 101, 128, .25);
+    padding: 8px;
+    z-index: 50;
+    display: none;
+}
+
+.cs.open .cs-list {
+    display: block;
+}
+
+.cs-option {
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    padding: 16px 18px;
+    font-family: 'Averta', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 0;
+    color: #12153A;
+    cursor: pointer;
+}
+
+.cs-option:hover,
+.cs-option.active {
+    background: #EEF2F6;
+}
+
+.cs-option.selected {
+    color: #1A78F2;
+}
+
+/* --- CTA button to match mock --- */
+.primary-btn {
+    margin-left: 12px;
+    background: #1A78F2;
+    color: #fff;
+    border: 0;
+    height: 64px;
+    padding: 0 32px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    transition: background .2s ease, transform .05s ease;
 }
 
 .primary-btn:hover {
-    background: #0059c9;
+    background: #0F69E0;
 }
+
+.primary-btn:active {
+    transform: translateY(1px);
+}
+
 
 /*=== Glass Effect Style === */
 .glassy {
@@ -642,6 +719,8 @@ html {
     height: 280px;
     width: 100%;
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* ==== Footer Section ==== */
@@ -771,6 +850,10 @@ html {
 
 /* === Mobile View === */
 @media (max-width: 768px) {
+
+    .hidden {
+        display: none;
+    }
 
     .nav {
         display: flex;
