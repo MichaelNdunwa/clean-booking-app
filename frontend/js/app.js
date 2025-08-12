@@ -123,11 +123,52 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // init
-  // document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.cs.field').forEach(shell => {
       const name = shell.dataset.name;
       const opts = dropdownData[name] || [];
       new SimpleSelect(shell, opts);
     });
-  // });
+
+  // === Footer accordions (mobile) ===
+  const footerCols = [...document.querySelectorAll('.footer-links .footer-col')];
+
+  footerCols.forEach(col => {
+    const heading = col.querySelector('h4');
+    const list = col.querySelector('ul');
+    if (!heading || !list) return;
+
+    // Accessibility wiring
+    const id = list.id || `footer-${(heading.textContent || 'section').trim().toLowerCase().replace(/\s+/g, '-')}`;
+    list.id = id;
+    heading.setAttribute('role', 'button');
+    heading.setAttribute('aria-controls', id);
+    heading.setAttribute('aria-expands', 'false');
+    heading.tabIndex = 0;
+
+    const toggle = () => {
+      const open = col.classList.toggle('open');
+      heading.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+
+    // Only act like an accordion on mobile
+    const isMobile = () => window.matchMedia('(max-width: 768px').matches;
+
+    const clickHandler = () => { if (isMobile()) toggle(); };
+    const keyHandler = (e) => {
+      if (!isMobile()) return;
+      if (e.key === 'Enter' || e.key === '') { e.preventDefault(); toggle(); }
+    };
+  
+    heading.addEventListener('click', clickHandler);
+    heading.addEventListener('keydown', keyHandler);
+  });
+
+  // Open only one section at a time:
+  footerCols.forEach(col => {
+    const heading = col.querySelector('h4');
+    heading.addEventListener('click', () => {
+      if (!window.matchMedia('(max-width: 768px)').matches) return;
+      footerCols.forEach(c => { if (c !== col) c.classList.remove('open'); });
+    });
+  });
 });

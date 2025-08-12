@@ -130,7 +130,7 @@
 
     <!-- The Shield Report -->
     <section class="blog-section">
-        <div class="container">
+        <div class="blog-container">
             <h3>The Shield Report</h3>
             <div class="blog-cards">
                 <div class="blog-card">
@@ -202,27 +202,28 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer-section">
+    <footer class="footer-section container">
 
-        <div class="footer-content container">
+        <div class="footer-content">
             <div class="footer-top">
-                <div class="footer-social">
+                <div class="footer-social hidden">
                     <a href="#" class="social-link">
-                        <img src="../images/icons/facebook-icon.svg" alt="facebook-icon" class="social-icon">
+                        <img src="../images/icons/facebook-icon.svg" alt="Facebook" class="social-icon">
                     </a>
                     <a href="#" class="social-link">
-                        <img src="../images/icons/twitter-icon.svg" alt="twitter-icon" class="social-icon">
+                        <img src="../images/icons/twitter-icon.svg" alt="Twitter" class="social-icon">
                     </a> <a href="#" class="social-link">
-                        <img src="../images/icons/instagram-icon.svg" alt="instagram-icon" class="social-icon">
+                        <img src="../images/icons/instagram-icon.svg" alt="Instagram" class="social-icon">
                     </a> <a href="#" class="social-link">
-                        <img src="../images/icons/linkedin-icon.svg" alt="linkedin-icon" class="social-icon">
+                        <img src="../images/icons/linkedin-icon.svg" alt="Linkedin" class="social-icon">
                     </a>
                 </div>
 
                 <div class="footer-links">
                     <nav class="footer-col" aria-label="Company">
-                        <h4>COMPANY</h4>
-                        <ul>
+                        <h4 class="footer-toggle" tabindex="0" aria-controls="footer-company" aria-expanded="false">
+                            COMPANY</h4>
+                        <ul id="footer-company">
                             <li><a href="#">About Us</a></li>
                             <li><a href="#">Career</a></li>
                             <li><a href="#">Press</a></li>
@@ -230,16 +231,18 @@
                         </ul>
                     </nav>
                     <nav class="footer-col" aria-label="Services">
-                        <h4>SERVICES</h4>
-                        <ul>
+                        <h4 class="footer-toggle" tabindex="0" aria-controls="footer-services" aria-expanded="false">
+                            SERVICES</h4>
+                        <ul id="footer-services">
                             <li><a href="#">Residential</a></li>
                             <li><a href="#">Office Cleaning</a></li>
                             <li><a href="#">Commercial Cleaning</a></li>
                         </ul>
                     </nav>
                     <nav class="footer-col" aria-label="Support">
-                        <h4>SUPPORT</h4>
-                        <ul>
+                        <h4 class="footer-toggle" tabindex="0" aria-controls="footer-support" aria-expanded="false">
+                            SUPPORT</h4>
+                        <ul id="footer-support">
                             <li><a href="#">Contact Us</a></li>
                             <li><a href="#">FAQ’s</a></li>
                         </ul>
@@ -252,6 +255,20 @@
                         <img src="../images/logo-footer.png" alt="Clean Logo" />
                     </a>
                 </div>
+
+                <div class="footer-social-mobile hidden">
+                    <a href="#" class="social-link">
+                        <img src="../images/icons/facebook-icon.svg" alt="Facebook" class="social-icon">
+                    </a>
+                    <a href="#" class="social-link">
+                        <img src="../images/icons/twitter-icon.svg" alt="Twitter" class="social-icon">
+                    </a> <a href="#" class="social-link">
+                        <img src="../images/icons/instagram-icon.svg" alt="Instagram" class="social-icon">
+                    </a> <a href="#" class="social-link">
+                        <img src="../images/icons/linkedin-icon.svg" alt="Linkedin" class="social-icon">
+                    </a>
+                </div>
+
                 <div class="legal-links">
                     <span>© 2025 Clean Co. All rights reserved</span>
                     <span aria-hidden="true">.</span>
